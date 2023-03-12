@@ -7,7 +7,7 @@
 #
 ### SOBRE
 
-- Diretório contendo pequenos projetos em Arduino, com o intuito de aperfeiçoamento e consolidação de conhecimento, voltado para a eletronica e programacao.
+- Diretório contendo pequenos projetos em Arduino, com o intuito de aperfeiçoamento e consolidação de conhecimento, com o contexto voltado para eletrônica associada a programação.
 
 #
 ### TECNOLOGIAS

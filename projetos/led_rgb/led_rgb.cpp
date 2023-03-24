@@ -1,58 +1,44 @@
-int ledR = 0, ledG = 1, ledB = 2;
+int vermelho = 3, azul = 4, verde = 5;
 
 void setup() {
-    pinMode(ledR, OUTPUT);
-    pinMode(ledG, OUTPUT);
-    pinMode(ledB, OUTPUT);
+    pinMode(vermelho, OUTPUT);
+    pinMode(azul, OUTPUT);
+    pinMode(verde, OUTPUT);
 }
 
 void loop() {
-    vermelho();
-    delay(2000);
-    verde();
-    delay(2000);
-    azul();
-    delay(2000);
-    ciano();
-    delay(2000);
-    roxo();
-    delay(2000);
-    amarelo();
-    delay(2000);
+    ativaComponente(vermelho);
+    delay(750);
+    desativaComponente(vermelho);
+
+    ativaComponente(azul);
+    delay(750);
+    desativaComponente(azul);
+
+    ativaComponente(verde);
+    delay(750);
+
+    ativaComponentes(vermelho, azul);
+    ativaComponentes(vermelho, verde);
+    ativaComponentes(azul, verde);
 }
 
-void vermelho() {
-    digitalWrite(ledR, HIGH);
-    digitalWrite(ledG, LOW);
-    digitalWrite(ledB, LOW);
+void ativaComponente(int porta) {
+    digitalWrite(porta, HIGH);
 }
 
-void azul() {
-    digitalWrite(ledR, LOW);
-    digitalWrite(ledG, HIGH);
-    digitalWrite(ledB, LOW);
+void desativaComponente(int porta) {
+    digitalWrite(porta, LOW);
 }
 
-void verde() {
-    digitalWrite(ledR, LOW);
-    digitalWrite(ledG, LOW);
-    digitalWrite(ledB, HIGH);
+void ativaComponentes(int porta1, int porta2){
+    ativaComponente(porta1);
+    ativaComponente(porta2);
+    delay(750);
+    desativaComponentes(porta1, porta2);
 }
 
-void ciano() {
-    digitalWrite(ledR, LOW);
-    digitalWrite(ledG, HIGH);
-    digitalWrite(ledB, HIGH);
-}
-
-void roxo() {
-    digitalWrite(ledR, HIGH);
-    digitalWrite(ledG, HIGH);
-    digitalWrite(ledB, LOW);
-}
-
-void amarelo(){
-    digitalWrite(ledR, HIGH);
-    digitalWrite(ledG, LOW);
-    digitalWrite(ledB, HIGH);
+void desativaComponentes(int porta1, int porta2){
+    desativaComponente(porta1);
+    desativaComponente(porta2);
 }

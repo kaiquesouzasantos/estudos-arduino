@@ -50,6 +50,7 @@ void setup() {
     pinMode(7, OUTPUT); // PINO 7 -> segmento F
     pinMode(8, OUTPUT); // PINO 8 -> segmento G
     pinMode(9, OUTPUT); // PINO 9 -> segmento PONTO
+    // SEGMENTOS CRESCENTES PARA MELHOR UTILIZACAO NO METODO
 }
 
 void loop() {

@@ -18,19 +18,17 @@ void loop() {
     centimetro = ultrasonic.convert(ultrasonic.timing(), Ultrasonic::CM)
     
     if(centimetro < 5){
-        digitalWrite(buzzer, HIGH);
-
-        digitalWrite(vermelho, HIGH);
-        digitalWrite(azul, HIGH);
-        digitalWrite(verde, LOW);
+        controlaComponentes(HIGH, LOW, HIGH, LOW);
     } else if (centimetro >= 5 and centimetro <= 15) {
-        digitalWrite(buzzer, HIGH);
-        digitalWrite(vermelho, LOW);
-        digitalWrite(azul, HIGH);
-        digitalWrite(verde, LOW);
+        controlaComponentes(LOW, HIGH, LOW, HIGH);
     } else {
-        digitalWrite(vermelho, LOW);
-        digitalWrite(azul, LOW);
-        digitalWrite(verde, HIGH);
+        controlaComponentes(LOW, LOW, HIGH, LOW);
     }
+}
+
+void controlaComponentes(estadoVermelho, estadoAzul, estadoverde, estadoBuzzer) {
+    digitalWrite(vermelho, estadoVermelho);
+    digitalWrite(azul, estadoAzul);
+    digitalWrite(verde, estadoVerde);
+    digitalWrite(buzzer, estadoBuzzer);
 }

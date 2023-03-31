@@ -18,7 +18,7 @@ void loop() {
     centimetro = ultrasonic.convert(ultrasonic.timing(), Ultrasonic::CM)
     
     if(centimetro < 5){
-        controlaComponentes(HIGH, LOW, HIGH, LOW);
+        controlaComponentes(HIGH, LOW, LOW, HIGH);
     } else if (centimetro >= 5 and centimetro <= 15) {
         controlaComponentes(LOW, HIGH, LOW, HIGH);
     } else {

@@ -2,7 +2,7 @@ const int botaoVerde = 4, botaoAmarelo = 6, botaoReseta = 5, ledVerde = 2, ledAm
 int valorVerde = 0, valorAmarelo = 0, valorReseta = 0, trava = 0;
 
 void setup() {
-	pinMode(botaoVerde, INPUT);
+    pinMode(botaoVerde, INPUT);
     pinMode(botaoAmarelo, INPUT);
     pinMode(botaoReseta, INPUT);
 

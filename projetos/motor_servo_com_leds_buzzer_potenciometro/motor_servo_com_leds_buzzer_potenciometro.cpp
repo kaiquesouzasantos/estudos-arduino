@@ -20,17 +20,16 @@ void loop() {
 
     servo.write(angulo);
 
-    if(angulo < 5) {
+    if(angulo < 91) {
         controleLeds(LOW, HIGH);
-        digitalWrite(buzzer, HIGH);
+        tone(buzzer, 800);
         delay(750);
-    } else if(angulo > 175) {
+    } else if(angulo > 90) {
         controleLeds(HIGH, LOW);
-        digitalWrite(buzzer, HIGH);
+        tone(buzzer, 1000);
         delay(750);
     } else {
         controleLeds(LOW, LOW);
-        digitalWrite(buzzer, LOW);
         delay(750);
     }
 }
